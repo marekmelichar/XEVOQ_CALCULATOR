@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
+import Inputs from './inputs/Inputs';
+
 class App extends Component {
   render() {
     return (
       <div>
- 			  react-redux starter
+ 			  <Inputs />
 	    </div>
     );
   }
