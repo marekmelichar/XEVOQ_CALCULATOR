@@ -5,6 +5,26 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 class Outputs extends Component {
+  componentWillReceiveProps(nextProps) {
+
+    if (nextProps.logic.number_of_rooms) {
+      this.setState({ returnOfInvestment: nextProps.logic.return_of_investment })
+    }
+
+    if (nextProps.logic.average_capacity_of_rooms) {
+      this.setState({ betterOrganizedMeetingsSavings: nextProps.logic.average_capacity_of_rooms })
+    }
+
+    if (nextProps.logic.amount_of_meetings_daily) {
+      this.setState({ increasedCapacity: nextProps.logic.amount_of_meetings_daily })
+    }
+
+    if (nextProps.logic.price_of_rent) {
+      this.setState({ savings: nextProps.logic.price_of_rent })
+    }
+
+  }
+
   constructor(props) {
     super(props)
 
@@ -51,7 +71,7 @@ class Outputs extends Component {
 const mapStateToProps = state => {
   // whatever is returned here, gets in as a prop
   return {
-
+    logic: state.logic
   };
 };
 

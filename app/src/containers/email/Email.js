@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
 
+import axios from 'axios';
+
+// let MAIL = window.MAIL
+
 class Email extends Component {
   constructor(props) {
     super(props)
@@ -19,11 +23,25 @@ class Email extends Component {
     event.target.select()
   }
 
+  handleSubmit(event) {
+    event.preventDefault()
+
+    let json = this.props.logic
+
+    axios.post(`${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR/send_email.php`, {json: json})
+    .then(function (response) {
+      console.log('response', response);
+    })
+    .catch(function (error) {
+      console.log('error', error);
+    });
+  }
+
   render() {
     return (
       <div>
         <h2>Leave us your contact informations and we will call you within next bussiness day :</h2>
-        <form>
+        <form onSubmit={event => this.handleSubmit(event)}>
           <label htmlFor="email"><h3>Your e-mail:</h3></label>
           <input
             id="email"
@@ -59,9 +77,11 @@ class Email extends Component {
 }
 
 const mapStateToProps = state => {
+  // console.log('state', state.logic);
+
   // whatever is returned here, gets in as a prop
   return {
-
+    logic: state.logic
   };
 };
 

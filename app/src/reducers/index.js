@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import Start from './reducer_starting';
+import Logic from './reducer_logic';
 
 // everything inside is a piece of state
 const rootReducer = combineReducers({
-  start: Start
+  logic: Logic
 });
 
 export default rootReducer;

@@ -22,6 +22,36 @@ class Inputs extends Component {
     event.target.select()
   }
 
+  handleNumberOfRooms(event) {
+    this.setState({ numberOfRooms: event.target.value })
+    this.props.handleNumberOfRooms(event.target.value)
+  }
+
+  averageCapacityOfRooms(event) {
+    this.setState({ averageCapacityOfRooms: event.target.value })
+    this.props.averageCapacityOfRooms(event.target.value)
+  }
+
+  amountOfMeetingsDaily(event) {
+    this.setState({ amountOfMeetingsDaily: event.target.value })
+    this.props.amountOfMeetingsDaily(event.target.value)
+  }
+
+  priceOfRent(event) {
+    this.setState({ priceOfRent: event.target.value })
+    this.props.priceOfRent(event.target.value)
+  }
+
+  totalSquareMeters(event) {
+    this.setState({ totalSquareMeters: event.target.value })
+    this.props.totalSquareMeters(event.target.value)
+  }
+
+  averageSalary(event) {
+    this.setState({ averageSalary: event.target.value })
+    this.props.averageSalary(event.target.value)
+  }
+
   render() {
     return (
       <div>
@@ -29,7 +59,7 @@ class Inputs extends Component {
         <input
           id="number-of-rooms"
           type="number"
-          onChange={event => this.setState({ numberOfRooms: event.target.value })}
+          onChange={event => this.handleNumberOfRooms(event)}
           value={this.state.numberOfRooms}
           onFocus={event => this.handleFocus(event)}
         />
@@ -37,7 +67,7 @@ class Inputs extends Component {
         <input
           id="average-capacity-of-rooms"
           type="number"
-          onChange={event => this.setState({ averageCapacityOfRooms: event.target.value })}
+          onChange={event => this.averageCapacityOfRooms(event)}
           value={this.state.averageCapacityOfRooms}
           onFocus={event => this.handleFocus(event)}
         />
@@ -45,7 +75,7 @@ class Inputs extends Component {
         <input
           id="amount-of-meetings-daily"
           type="number"
-          onChange={event => this.setState({ amountOfMeetingsDaily: event.target.value })}
+          onChange={event => this.amountOfMeetingsDaily(event)}
           value={this.state.amountOfMeetingsDaily}
           onFocus={event => this.handleFocus(event)}
         />
@@ -53,7 +83,7 @@ class Inputs extends Component {
         <input
           id="price-of-rent"
           type="number"
-          onChange={event => this.setState({ priceOfRent: event.target.value })}
+          onChange={event => this.priceOfRent(event)}
           value={this.state.priceOfRent}
           onFocus={event => this.handleFocus(event)}
         />
@@ -61,7 +91,7 @@ class Inputs extends Component {
         <input
           id="total-square-meters"
           type="number"
-          onChange={event => this.setState({ totalSquareMeters: event.target.value })}
+          onChange={event => this.totalSquareMeters(event)}
           value={this.state.totalSquareMeters}
           onFocus={event => this.handleFocus(event)}
         />
@@ -69,7 +99,7 @@ class Inputs extends Component {
         <input
           id="average-salary"
           type="number"
-          onChange={event => this.setState({ averageSalary: event.target.value })}
+          onChange={event => this.averageSalary(event)}
           value={this.state.averageSalary}
           onFocus={event => this.handleFocus(event)}
         />
