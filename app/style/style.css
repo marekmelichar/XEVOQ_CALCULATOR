@@ -1,3 +1,8 @@
-/*input {
-  border: 5px solid red;
-}*/
+body {
+  font-family: 'open_sanslight';
+}
+
+h2 {
+  font-family: 'open_sansbold';
+  font-size: 1.5em;
+}
