@@ -1,34 +1,19 @@
 <?php
-if (is_ajax()) {
-  if (isset($_POST["json"]) && !empty($_POST["json"])) { //Checks if action value exists
-    $action = $_POST["json"];
-    switch($action) { //Switch case for value of action
-      case "json": test_function(); break;
-    }
-  }
+
+$request = $_GET['json'];
+$json = json_decode($request);
+
+$array;
+
+foreach ($json as $name => $value) {
+    // $variable = "$name: $value\n";
+    // array_push($array, "$name: $value\n")
+
+    $array[] = "$name: $value\n";
 }
 
-//Function to check if the request is an AJAX request
-function is_ajax() {
-  return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
-}
-
-function test_function(){
-  $return = $_POST;
-
-  //Do what you need to do with the info. The following are some examples.
-  //if ($return["favorite_beverage"] == ""){
-  //  $return["favorite_beverage"] = "Coke";
-  //}
-  //$return["favorite_restaurant"] = "McDonald's";
-
-  $return["json"] = json_encode($return);
-  echo json_encode($return);
-}
+$data = implode("\n", $array);
 
 
 
-
-
-
-mail( 'marek.melichar@centrum.cz', 'subject', 'message', 'headers', 'attachments' );
+mail( 'marek.melichar@centrum.cz', 'subject', $data, 'headers', 'attachments' );

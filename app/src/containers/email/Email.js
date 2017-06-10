@@ -28,7 +28,19 @@ class Email extends Component {
 
     let json = this.props.logic
 
-    axios.post(`${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR/send_email.php`, {json: json})
+    // axios.post(`${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR/send_email.php`, {json: json})
+    // .then(function (response) {
+    //   console.log('response', response);
+    // })
+    // .catch(function (error) {
+    //   console.log('error', error);
+    // });
+
+    axios.get(`${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR/send_email.php`, {
+      params: {
+        json
+      }
+    })
     .then(function (response) {
       console.log('response', response);
     })
