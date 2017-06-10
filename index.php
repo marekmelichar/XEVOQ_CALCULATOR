@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: XEVOQ CALCULATOR
+Plugin Name: XEVOQ CALCULATOR WITH REACT
 Version: 1.0.0
 Text Domain: xevoq-calculator
 Author: Marek Melichar
