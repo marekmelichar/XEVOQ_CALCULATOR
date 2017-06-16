@@ -60,6 +60,13 @@ a.logo {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  border: none;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
 .row {
   display: block;
   width: 1280px;
@@ -250,7 +257,7 @@ a.logo {
   vertical-align: middle;
   display: table-cell;
 }
-
+/*
 @font-face {
     font-family: 'open_sanslight';
     src: url('../fonts/open_sans/opensans-light-webfont.eot');
@@ -321,7 +328,7 @@ a.logo {
     font-weight: bold;
     font-style: italic;
 
-}
+}*/
 
 
 

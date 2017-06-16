@@ -12,7 +12,23 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="row">
+        <div id="calculator-testimonials" className="row">
+          <div className="column size_50">
+            <div className="logo">
+              <img src="../../../images/Dixons_Carphone.svg" alt="Dixons_Carphone Logo" />
+            </div>
+          </div>
+          <div className="column size_50">
+            <h2>Success story thanks to XEVOQ</h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div id="calculator-graph" className="row">
+          <div className="column size_100">
+            
+          </div>
+        </div>
+        <div id="calculator-app" className="row">
           <div className="column size_50">
             <Inputs />
           </div>

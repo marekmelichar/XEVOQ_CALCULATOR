@@ -23,7 +23,7 @@ export const handleNumberOfRooms = (number) => {
   };
 };
 
-export const averageCapacityOfRooms = (number) => {
+export const averageOccupancyOfRooms = (number) => {
   return {
     type: AVERAGE_CAPACITY_OF_ROOMS,
     number
@@ -37,7 +37,7 @@ export const amountOfMeetingsDaily = (number) => {
   };
 };
 
-export const priceOfRent = (number) => {
+export const priceOfRent1sqm = (number) => {
   return {
     type: PRICE_OF_RENT,
     number
