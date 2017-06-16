@@ -11,10 +11,7 @@ class Inputs extends Component {
     this.state = {
       numberOfRooms: 0,
       averageOccupancyOfRooms: 0,
-      amountOfMeetingsDaily: 0,
-      priceOfRent1sqm: 0,
-      totalSquareMeters: 0,
-      averageSalary: 0
+      amountOfMeetingsDaily: 0
     }
   }
 
@@ -37,23 +34,7 @@ class Inputs extends Component {
     this.props.amountOfMeetingsDaily(event.target.value)
   }
 
-  priceOfRent1sqm(event) {
-    this.setState({ priceOfRent1sqm: event.target.value })
-    this.props.priceOfRent1sqm(event.target.value)
-  }
-
-  totalSquareMeters(event) {
-    this.setState({ totalSquareMeters: event.target.value })
-    this.props.totalSquareMeters(event.target.value)
-  }
-
-  averageSalary(event) {
-    this.setState({ averageSalary: event.target.value })
-    this.props.averageSalary(event.target.value)
-  }
-
   render() {
-    console.log('AAAAAAAA', this.state);
     return (
       <div>
         <div id="number-of-rooms">
@@ -86,39 +67,6 @@ class Inputs extends Component {
             value="0"
             onChange={event => this.amountOfMeetingsDaily(event)}
             value={this.state.amountOfMeetingsDaily}
-            onFocus={event => this.handleFocus(event)}
-          />
-        </div>
-        <div id="price-of-rent-1sqm">
-          <label htmlFor="_price-of-rent-1sqm"><h3>Price of rent / 1 square meter:</h3></label>
-          <input
-            id="_price-of-rent-1sqm"
-            type="number"
-            value="0"
-            onChange={event => this.priceOfRent1sqm(event)}
-            value={this.state.priceOfRent1sqm}
-            onFocus={event => this.handleFocus(event)}
-          />
-        </div>
-        <div id="total-square-meters">
-          <label htmlFor="_total-square-meters"><h3>Total square meters of all meeting rooms:</h3></label>
-          <input
-            id="_total-square-meters"
-            type="number"
-            value="0"
-            onChange={event => this.totalSquareMeters(event)}
-            value={this.state.totalSquareMeters}
-            onFocus={event => this.handleFocus(event)}
-          />
-        </div>
-        <div id="average-salary">
-          <label htmlFor="_average-salary"><h3>Average salary per hour of all attendees of meetings:</h3></label>
-          <input
-            id="_average-salary"
-            type="number"
-            value="0"
-            onChange={event => this.averageSalary(event)}
-            value={this.state.averageSalary}
             onFocus={event => this.handleFocus(event)}
           />
         </div>

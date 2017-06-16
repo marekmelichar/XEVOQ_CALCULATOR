@@ -4,7 +4,7 @@
 
 // INPUTS
 export const NUMBER_OF_ROOMS = 'NUMBER_OF_ROOMS';
-export const AVERAGE_CAPACITY_OF_ROOMS = 'AVERAGE_CAPACITY_OF_ROOMS';
+export const AVERAGE_OCCUPANCY_OF_ROOMS = 'AVERAGE_CAPACITY_OF_ROOMS';
 export const AMOUNT_OF_MEETINGS_DAILY = 'AMOUNT_OF_MEETINGS_DAILY';
 export const PRICE_OF_RENT = 'PRICE_OF_RENT';
 export const TOTAL_SQUARE_METERS = 'TOTAL_SQUARE_METERS';
@@ -25,7 +25,7 @@ export const handleNumberOfRooms = (number) => {
 
 export const averageOccupancyOfRooms = (number) => {
   return {
-    type: AVERAGE_CAPACITY_OF_ROOMS,
+    type: AVERAGE_OCCUPANCY_OF_ROOMS,
     number
   };
 };
