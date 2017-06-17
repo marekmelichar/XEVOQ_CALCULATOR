@@ -7,12 +7,12 @@ function default_calculator_scripts()
 	// 	return;
 	// }
 
-  wp_register_script( 'app-js', plugins_url( '../app/scripts/main.js', __FILE__ ) );
-  wp_enqueue_script( 'app-js', '', '', false, true );
+  wp_register_script( 'xevoq-calc-js', plugins_url( '../app/scripts/main.js', __FILE__ ) );
+  wp_enqueue_script( 'xevoq-calc-js', '', '', false, true );
 
-  wp_register_style( 'own-lib', plugins_url( '../app/style/own_lib.css', __FILE__ ), array(), '20120208', 'all' );
-  wp_enqueue_style( 'own-lib' );
-  wp_register_style( 'app-style', plugins_url( '../app/style/style.css', __FILE__ ), array(), '20120208', 'all' );
-  wp_enqueue_style( 'app-style' );
+  wp_register_style( 'xevoq-calc-lib', plugins_url( '../app/style/xevoq_calc_lib.css', __FILE__ ), array(), '20120208', 'all' );
+  wp_enqueue_style( 'xevoq-calc-lib' );
+  wp_register_style( 'xevoq-calc-style', plugins_url( '../app/style/xevoq_calc_style.css', __FILE__ ), array(), '20120208', 'all' );
+  wp_enqueue_style( 'xevoq-calc-style' );
 
 }
