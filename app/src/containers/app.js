@@ -15,7 +15,7 @@ class App extends Component {
         <div id="calculator-testimonials" className="row">
           <div className="column size_50">
             <div className="logo">
-              <img src="../../../images/Dixons_Carphone.svg" alt="Dixons_Carphone Logo" />
+              <img src={window.location.hostname !== 'localhost' ? `${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg` : "../../../images/Dixons_Carphone.svg"} alt="Dixons_Carphone Logo" />
             </div>
           </div>
           <div className="column size_50">
@@ -25,7 +25,7 @@ class App extends Component {
         </div>
         <div id="calculator-graph" className="row">
           <div className="column size_100">
-            
+
           </div>
         </div>
         <div id="calculator-app" className="row">
