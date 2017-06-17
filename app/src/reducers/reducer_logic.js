@@ -14,18 +14,13 @@ import {
 
 let INITIAL_STATE = {
   // inputs
-  number_of_rooms: 0,
-  average_occupancy_of_rooms: 0,
-  amount_of_meetings_daily: 0,
-  price_of_rent_1sqm: 0,
-  total_square_meters: 0,
-  average_salary: 0,
+  C3: 0,
+  C4: 0,
+  C5: 0,
+  C6: 0,
+  C7: 0,
+  C8: 0
 
-  // outputs
-  return_of_investment: 0,
-  better_organized_meetings: 0,
-  increased_capacity: 0,
-  savings: 0
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -34,38 +29,38 @@ export default function(state = INITIAL_STATE, action) {
     case NUMBER_OF_ROOMS:
       return({
         ...state,
-        number_of_rooms: action.number
+        C3: action.number
       });
       break;
     case AVERAGE_OCCUPANCY_OF_ROOMS:
-      console.log(action.number);
+      // console.log(action.number);
       return({
         ...state,
-        average_occupancy_of_rooms: action.number
+        C5: action.number
       });
       break;
     case AMOUNT_OF_MEETINGS_DAILY:
       return({
         ...state,
-        amount_of_meetings_daily: action.number
+        C8: action.number
       });
       break;
     case PRICE_OF_RENT:
       return({
         ...state,
-        price_of_rent_1sqm: action.number
+        C6: action.number
       });
       break;
     case TOTAL_SQUARE_METERS:
       return({
         ...state,
-        total_square_meters: action.number
+        C4: action.number
       });
       break;
     case AVERAGE_SALARY:
       return({
         ...state,
-        average_salary: action.number
+        C7: action.number
       });
       break;
     default:

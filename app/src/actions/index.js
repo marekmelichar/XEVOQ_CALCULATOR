@@ -16,72 +16,72 @@ export const BETTER_ORGANIZED_MEETINGS = 'BETTER_ORGANIZED_MEETINGS';
 export const INCREASED_CAPACITY = 'INCREASED_CAPACITY';
 export const SAVINGS = 'SAVINGS';
 
-export const handleNumberOfRooms = (number) => {
+export const C3 = (number) => {
   return {
     type: NUMBER_OF_ROOMS,
     number
   };
 };
 
-export const averageOccupancyOfRooms = (number) => {
+export const C5 = (number) => {
   return {
     type: AVERAGE_OCCUPANCY_OF_ROOMS,
     number
   };
 };
 
-export const amountOfMeetingsDaily = (number) => {
+export const C8 = (number) => {
   return {
     type: AMOUNT_OF_MEETINGS_DAILY,
     number
   };
 };
 
-export const priceOfRent1sqm = (number) => {
+export const C6 = (number) => {
   return {
     type: PRICE_OF_RENT,
     number
   };
 };
 
-export const totalSquareMeters = (number) => {
+export const C4 = (number) => {
   return {
     type: TOTAL_SQUARE_METERS,
     number
   };
 };
 
-export const averageSalary = (number) => {
+export const C7 = (number) => {
   return {
     type: AVERAGE_SALARY,
     number
   };
 };
-
-export const returnOfInvestment = (number) => {
-  return {
-    type: RETURN_OF_INVESTMENT,
-    number
-  };
-};
-
-export const betterOrganizedMeetingsSavings = (number) => {
-  return {
-    type: BETTER_ORGANIZED_MEETINGS,
-    number
-  };
-};
-
-export const increasedCapacity = (number) => {
-  return {
-    type: INCREASED_CAPACITY,
-    number
-  };
-};
-
-export const savings = (number) => {
-  return {
-    type: SAVINGS,
-    number
-  };
-};
+//
+// export const returnOfInvestment = (number) => {
+//   return {
+//     type: RETURN_OF_INVESTMENT,
+//     number
+//   };
+// };
+//
+// export const betterOrganizedMeetingsSavings = (number) => {
+//   return {
+//     type: BETTER_ORGANIZED_MEETINGS,
+//     number
+//   };
+// };
+//
+// export const increasedCapacity = (number) => {
+//   return {
+//     type: INCREASED_CAPACITY,
+//     number
+//   };
+// };
+//
+// export const savings = (number) => {
+//   return {
+//     type: SAVINGS,
+//     number
+//   };
+// };

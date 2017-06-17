@@ -6,105 +6,21 @@ import * as actions from '../../actions';
 
 class Outputs extends Component {
 
-  componentWillReceiveProps(nextProps) {
-
-    let { logic } = nextProps
-
-    if (logic.number_of_rooms) {
-      this.setState({ number_of_rooms: logic.number_of_rooms })
-    }
-
-    if (logic.total_square_meters > 0) {
-      this.setState({ totalSquareMeters: parseFloat(logic.total_square_meters) })
-    } else {
-      this.setState({ totalSquareMeters: 165 })
-    }
-
-    if (logic.average_occupancy_of_rooms > 0) {
-      this.setState({ average_occupancy_of_rooms: parseFloat(logic.average_occupancy_of_rooms) })
-    } else {
-      this.setState({ average_occupancy_of_rooms: 3.6 })
-    }
-
-    if (logic.price_of_rent_1sqm > 0) {
-      this.setState({ priceOfRent1sqm: parseFloat(logic.price_of_rent_1sqm) })
-    } else {
-      this.setState({ priceOfRent1sqm: 500 })
-    }
-
-    if (logic.average_salary > 0) {
-      this.setState({ averageSalary: parseFloat(logic.average_salary) })
-    } else {
-      this.setState({ averageSalary: 650 })
-    }
-
-    if(logic.number_of_rooms) {
-      this.setState({ F39: ((this.state.totalSquareMeters * this.state.priceOfRent1sqm) / (20 * 8) / parseFloat(logic.number_of_rooms)).toFixed(1) })
-    }
-
-    if (logic.amount_of_meetings_daily > 0) {
-
-      let J20 = (30 / 60) * (logic.amount_of_meetings_daily * 0.25) * this.state.F39
-      let J28 = (15 / 60) * (logic.amount_of_meetings_daily * 0.225) * (this.state.average_occupancy_of_rooms * this.state.averageSalary)
-
-      let a = J20 + J28
-      let b = Math.ceil(a / 100.0) * 100
-
-      this.setState({ final_savings_daily: b })
-    } else {
-
-      let F18 = ((30 / 60) * (parseFloat(this.state.number_of_rooms) * this.state.F39))
-      let F28 = ((15 / 60) * (this.state.average_occupancy_of_rooms * this.state.averageSalary) * logic.number_of_rooms * 0.9)
-
-      let a = F18 + F28
-      let b = Math.ceil(a / 100.0) * 100
-
-      this.setState({ final_savings_daily: b })
-
-      let F21 = F18 * 4 * 4
-      let F31 = F28 * 4 * 4
-
-      let c = F21 + F31
-      let d = Math.ceil(c / 1000.0) * 1000
-
-      this.setState({ final_savings_monthly: d })
-    }
+  componentDidMount() {
+    this.props.C4(this.state.C4)
+    this.props.C6(this.state.C6)
+    this.props.C7(this.state.C7)
   }
 
   constructor(props) {
     super(props)
 
     this.state = {
-      // returnOfInvestment: 0,
-      // betterOrganizedMeetingsSavings: 0,
-      // increasedCapacity: 0,
-      // savings: 0,
-      number_of_rooms: 0,
-      average_occupancy_of_rooms: 3.6,
-      amount_of_meetings_daily: 0,
-      totalSquareMeters: 165,
-      priceOfRent1sqm: 500,
-      averageSalary: 650,
+      C4: 450,
+      C6: 200,
+      C7: 400,
       final_savings_daily: 0,
       final_savings_monthly: 0,
-      F39: 0
-
-
-      // B31: 10,
-      // B33: 12,
-      // B35: 3,
-      // B23: 15,
-      // B25: 3,
-      // B27: 6,
-      // B16: 500,
-      // B19: 650,
-      // B42: 0,
-      //C8: 0,
-      // J18: 0.25,
-      // J19: 0,
-      //F35: 0, // 165 m2
-      //F37: 0, // 500 kc / m2
-      // C3: 0,
     }
   }
 
@@ -112,23 +28,85 @@ class Outputs extends Component {
     event.target.select()
   }
 
-  priceOfRent1sqm(event) {
-    this.setState({ priceOfRent1sqm: event.target.value })
-    this.props.priceOfRent1sqm(event.target.value)
+  C6(event) {
+    let value = parseFloat(event.target.value)
+    this.setState({ C6: value })
+    this.props.C6(value)
   }
 
-  totalSquareMeters(event) {
-    this.setState({ totalSquareMeters: event.target.value })
-    this.props.totalSquareMeters(event.target.value)
+  C4(event) {
+    let value = parseFloat(event.target.value)
+    this.setState({ C4: value })
+    this.props.C4(value)
   }
 
-  averageSalary(event) {
-    this.setState({ averageSalary: event.target.value })
-    this.props.averageSalary(event.target.value)
+  C7(event) {
+    let value = parseFloat(event.target.value)
+    this.setState({ C7: value })
+    this.props.C7(value)
   }
 
   renderOutput() {
+    console.log('PROPS', this.props.logic);
     console.log('STATE', this.state);
+
+    const { logic } = this.props
+
+    let final_savings_daily = 0
+    let final_savings_monthly = 0
+
+    let B25 = parseFloat(logic.C3) * 0.2
+    let B33 = parseFloat(logic.C3) - B25
+    let F35 = parseFloat(logic.C4) || (10 * B33) + (15 * B25)
+    let F36 = (3 * B33) + (6 * B25) / (B33 + B25)
+    let F37 = parseFloat(logic.C6)
+    let F38 = parseFloat(logic.C7)
+    let B37 = 500
+    let B38 = 650
+    let F39 = (F35 * F37) / (20 * 8) / (parseFloat(logic.C3)).toFixed(1)
+    let F40 = F36 * F38
+
+    if (logic.C8 > 0) {
+
+        let J19 = logic.C8 * 0.25
+        let J20 = 0.5 * J19 * F39
+        let J27 = logic.C8 * 0.225
+        let F40 = logic.C5 * logic.C7
+        let J28 = 0.25 * J27 * F40
+
+        let a = J20 + J28
+        let b = Math.ceil(a / 100.0) * 100
+
+        final_savings_daily = b
+
+        let F18 = (30 / 60) * parseFloat(logic.C3) * F39
+        let F28 = (15 / 60) * logic.C5 * logic.C7 * logic.C3 * 0.9
+        let F21 = F18 * 4 * 4
+        let F31 = F28 * 4 * 4
+
+        let c = F21 + F31
+        let d = Math.ceil(c / 1000.0) * 1000
+
+        final_savings_monthly = d
+
+      } else {
+
+        let F18 = (30 / 60) * parseFloat(logic.C3) * F39
+        let F28 = (15 / 60) * logic.C5 * logic.C7 * logic.C3 * 0.9
+
+        let a = F18 + F28
+        let b = Math.ceil(a / 100.0) * 100
+
+        final_savings_daily = b
+
+        let F21 = F18 * 4 * 4
+        let F31 = F28 * 4 * 4
+
+        let c = F21 + F31
+        let d = Math.ceil(c / 1000.0) * 1000
+
+        final_savings_monthly = d
+      }
 
     return (
       <div>
@@ -138,8 +116,8 @@ class Outputs extends Component {
             id="_total-square-meters"
             type="number"
             value="0"
-            onChange={event => this.totalSquareMeters(event)}
-            value={this.state.totalSquareMeters}
+            onChange={event => this.C4(event)}
+            value={this.state.C4}
             onFocus={event => this.handleFocus(event)}
           />
         </div>
@@ -149,8 +127,8 @@ class Outputs extends Component {
             id="_price-of-rent-1sqm"
             type="number"
             value="0"
-            onChange={event => this.priceOfRent1sqm(event)}
-            value={this.state.priceOfRent1sqm}
+            onChange={event => this.C6(event)}
+            value={this.state.C6}
             onFocus={event => this.handleFocus(event)}
           />
         </div>
@@ -160,51 +138,20 @@ class Outputs extends Component {
             id="_average-salary"
             type="number"
             value="0"
-            onChange={event => this.averageSalary(event)}
-            value={this.state.averageSalary}
+            onChange={event => this.C7(event)}
+            value={this.state.C7}
             onFocus={event => this.handleFocus(event)}
           />
         </div>
 
 
-        {/* <div id="return-of-investment">
-          <label htmlFor="_return-of-investment"><h3>Return on investment / days:</h3></label>
-          <input
-            id="_return-of-investment"
-            type="text"
-            value={this.state.returnOfInvestment}
-          />
-        </div> */}
-        {/* <div id="better-organized-meetings-savings">
-          <label htmlFor="_better-organized-meetings-savings"><h3>Yearly savings based on saved hours thanks to better organized meetings:</h3></label>
-          <input
-            id="_better-organized-meetings-savings"
-            type="text"
-            value={this.state.betterOrganizedMeetingsSavings}
-          />
-        </div> */}
-        {/* <div id="increased-capacity-of-meetings">
-          <label htmlFor="_increased-capacity-of-meetings"><h3>Increased capacity in % thanks to Cancel function and automated cancelling of meetings:</h3></label>
-          <input
-            id="_increased-capacity-of-meetings"
-            type="text"
-            value={this.state.increasedCapacity}
-          />
-        </div> */}
-        {/* <div id="savings-in-czk">
-          <label htmlFor="_savings-in-czk"><h3>Savings in CZK for increasing the capacity of meeting rooms:</h3></label>
-          <input
-            id="_savings-in-czk"
-            type="text"
-            value={this.state.savings}
-          />
-        </div> */}
+
         <div id="FINAL_SAVINGS_DAILY">
           <label htmlFor="_FINAL_SAVINGS_DAILY"><h3>Final Savings in CZK DAILY:</h3></label>
           <input
             id="_FINAL_SAVINGS_DAILY"
             type="text"
-            value={this.state.final_savings_daily}
+            value={final_savings_daily}
           />
         </div>
         <div id="FINAL_SAVINGS_MONTHLY">
@@ -212,7 +159,7 @@ class Outputs extends Component {
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
-            value={this.state.final_savings_monthly}
+            value={final_savings_monthly}
           />
         </div>
       </div>
@@ -220,7 +167,6 @@ class Outputs extends Component {
   }
 
   render() {
-    console.log('PROPS', this.props.logic);
     return (
       <div>
         {this.renderOutput()}

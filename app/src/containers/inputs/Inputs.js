@@ -5,13 +5,20 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 class Inputs extends Component {
+
+  componentDidMount() {
+    this.props.C3(this.state.C3)
+    this.props.C5(this.state.C5)
+    this.props.C8(this.state.C8)
+  }
+
   constructor(props) {
     super(props)
 
     this.state = {
-      numberOfRooms: 0,
-      averageOccupancyOfRooms: 0,
-      amountOfMeetingsDaily: 0
+      C3: 15,
+      C5: 6,
+      C8: 8
     }
   }
 
@@ -19,19 +26,22 @@ class Inputs extends Component {
     event.target.select()
   }
 
-  handleNumberOfRooms(event) {
-    this.setState({ numberOfRooms: event.target.value })
-    this.props.handleNumberOfRooms(event.target.value)
+  C3(event) {
+    let value = parseFloat(event.target.value)
+    this.setState({ C3: value })
+    this.props.C3(value)
   }
 
-  averageOccupancyOfRooms(event) {
-    this.setState({ averageOccupancyOfRooms: event.target.value })
-    this.props.averageOccupancyOfRooms(event.target.value)
+  C5(event) {
+    let value = parseFloat(event.target.value)
+    this.setState({ C5: value })
+    this.props.C5(value)
   }
 
-  amountOfMeetingsDaily(event) {
-    this.setState({ amountOfMeetingsDaily: event.target.value })
-    this.props.amountOfMeetingsDaily(event.target.value)
+  C8(event) {
+    let value = parseFloat(event.target.value)
+    this.setState({ C8: value })
+    this.props.C8(value)
   }
 
   render() {
@@ -43,8 +53,8 @@ class Inputs extends Component {
             id="_number-of-rooms"
             type="number"
             value="0"
-            onChange={event => this.handleNumberOfRooms(event)}
-            value={this.state.numberOfRooms}
+            onChange={event => this.C3(event)}
+            value={this.state.C3}
             onFocus={event => this.handleFocus(event)}
           />
         </div>
@@ -54,8 +64,8 @@ class Inputs extends Component {
             id="_average-occupancy-of-rooms"
             type="number"
             value="0"
-            onChange={event => this.averageOccupancyOfRooms(event)}
-            value={this.state.averageOccupancyOfRooms}
+            onChange={event => this.C5(event)}
+            value={this.state.C5}
             onFocus={event => this.handleFocus(event)}
           />
         </div>
@@ -65,8 +75,8 @@ class Inputs extends Component {
             id="_amount-of-meetings-daily"
             type="number"
             value="0"
-            onChange={event => this.amountOfMeetingsDaily(event)}
-            value={this.state.amountOfMeetingsDaily}
+            onChange={event => this.C8(event)}
+            value={this.state.C8}
             onFocus={event => this.handleFocus(event)}
           />
         </div>
