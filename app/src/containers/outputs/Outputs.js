@@ -47,8 +47,6 @@ class Outputs extends Component {
   }
 
   renderOutput() {
-    console.log('PROPS', this.props.logic);
-    console.log('STATE', this.state);
 
     const { logic } = this.props
 
