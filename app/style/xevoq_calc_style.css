@@ -27,3 +27,23 @@
   width: 100%;
   height: 100px;
 }
+
+#calculator #how-we-got-those-numbers {
+  margin-top: 3.7em;
+}
+
+#calculator #how-we-got-those-numbers button {
+  margin-bottom: 0.4em;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#calculator #output-fields {
+  -webkit-transition: opacity 0.6s ease-in-out;
+    -moz-transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
+}

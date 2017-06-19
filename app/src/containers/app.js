@@ -57,11 +57,11 @@ class App extends Component {
             <Outputs />
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="column size_100">
             <Email />
           </div>
-        </div>
+        </div> */}
 	    </div>
     );
   }

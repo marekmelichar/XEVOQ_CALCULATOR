@@ -21,6 +21,7 @@ class Outputs extends Component {
       C7: 400,
       final_savings_daily: 0,
       final_savings_monthly: 0,
+      open_other_inputs: false
     }
   }
 
@@ -107,51 +108,51 @@ class Outputs extends Component {
       }
 
     return (
-      <div>
-        <div id="total-square-meters">
-          <label htmlFor="_total-square-meters"><h3>Total square meters of all meeting rooms:</h3></label>
-          <input
-            id="_total-square-meters"
-            type="number"
-            value="0"
-            onChange={event => this.C4(event)}
-            value={this.state.C4}
-            onFocus={event => this.handleFocus(event)}
-          />
-        </div>
-        <div id="price-of-rent-1sqm">
-          <label htmlFor="_price-of-rent-1sqm"><h3>Price of rent / 1 square meter:</h3></label>
-          <input
-            id="_price-of-rent-1sqm"
-            type="number"
-            value="0"
-            onChange={event => this.C6(event)}
-            value={this.state.C6}
-            onFocus={event => this.handleFocus(event)}
-          />
-        </div>
-        <div id="average-salary">
-          <label htmlFor="_average-salary"><h3>Average salary per hour of all attendees of meetings:</h3></label>
-          <input
-            id="_average-salary"
-            type="number"
-            value="0"
-            onChange={event => this.C7(event)}
-            value={this.state.C7}
-            onFocus={event => this.handleFocus(event)}
-          />
-        </div>
-
-
-
-        <div id="FINAL_SAVINGS_DAILY">
-          <label htmlFor="_FINAL_SAVINGS_DAILY"><h3>Final Savings in CZK DAILY:</h3></label>
-          <input
-            id="_FINAL_SAVINGS_DAILY"
-            type="text"
-            value={final_savings_daily}
-          />
-        </div>
+      <div id="how-we-got-those-numbers">
+        <button onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>Configure other parameters</button>
+        {this.state.open_other_inputs && <div id="output-fields">
+          <div id="total-square-meters">
+            <label htmlFor="_total-square-meters"><h3>Total square meters of all meeting rooms:</h3></label>
+            <input
+              id="_total-square-meters"
+              type="number"
+              value="0"
+              onChange={event => this.C4(event)}
+              value={this.state.C4}
+              onFocus={event => this.handleFocus(event)}
+            />
+          </div>
+          <div id="price-of-rent-1sqm">
+            <label htmlFor="_price-of-rent-1sqm"><h3>Price of rent / 1 square meter:</h3></label>
+            <input
+              id="_price-of-rent-1sqm"
+              type="number"
+              value="0"
+              onChange={event => this.C6(event)}
+              value={this.state.C6}
+              onFocus={event => this.handleFocus(event)}
+            />
+          </div>
+          <div id="average-salary">
+            <label htmlFor="_average-salary"><h3>Average salary per hour of all attendees of meetings:</h3></label>
+            <input
+              id="_average-salary"
+              type="number"
+              value="0"
+              onChange={event => this.C7(event)}
+              value={this.state.C7}
+              onFocus={event => this.handleFocus(event)}
+            />
+          </div>
+          <div id="FINAL_SAVINGS_DAILY">
+            <label htmlFor="_FINAL_SAVINGS_DAILY"><h3>Final Savings in CZK DAILY:</h3></label>
+            <input
+              id="_FINAL_SAVINGS_DAILY"
+              type="text"
+              value={final_savings_daily}
+            />
+          </div>
+        </div>}
         <div id="FINAL_SAVINGS_MONTHLY">
           <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings in CZK MONTHLY:</h3></label>
           <input
