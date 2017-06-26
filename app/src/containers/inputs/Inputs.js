@@ -46,9 +46,8 @@ class Inputs extends Component {
 
   render() {
     return (
-      <div>
-        <div id="number-of-rooms">
-          <label htmlFor="_number-of-rooms"><h3>Number of rooms:</h3></label>
+      <div className="row">
+        <div id="number-of-rooms" className="column size_33">
           <input
             id="_number-of-rooms"
             type="number"
@@ -57,9 +56,9 @@ class Inputs extends Component {
             value={this.state.C3}
             onFocus={event => this.handleFocus(event)}
           />
+          <label htmlFor="_number-of-rooms"><h3>Number of rooms</h3></label>
         </div>
-        <div id="average-occupancy-of-rooms">
-          <label htmlFor="_average-occupancy-of-rooms"><h3>Average occupancy of rooms:</h3></label>
+        <div id="average-occupancy-of-rooms" className="column size_33">
           <input
             id="_average-occupancy-of-rooms"
             type="number"
@@ -68,9 +67,9 @@ class Inputs extends Component {
             value={this.state.C5}
             onFocus={event => this.handleFocus(event)}
           />
+          <label htmlFor="_average-occupancy-of-rooms"><h3>Average occupancy of rooms</h3></label>
         </div>
-        <div id="amount-of-meetings-daily">
-          <label htmlFor="_amount-of-meetings-daily"><h3>Amount of meetings per day:</h3></label>
+        <div id="amount-of-meetings-daily" className="column size_33">
           <input
             id="_amount-of-meetings-daily"
             type="number"
@@ -79,6 +78,7 @@ class Inputs extends Component {
             value={this.state.C8}
             onFocus={event => this.handleFocus(event)}
           />
+          <label htmlFor="_amount-of-meetings-daily"><h3>Amount of meetings per day</h3></label>
         </div>
 	    </div>
     );

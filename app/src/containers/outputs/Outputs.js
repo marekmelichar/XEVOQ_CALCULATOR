@@ -109,7 +109,7 @@ class Outputs extends Component {
 
     return (
       <div id="how-we-got-those-numbers">
-        <button onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>Configure other parameters</button>
+        {/* <button onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>Configure other parameters</button>
         {this.state.open_other_inputs && <div id="output-fields">
           <div id="total-square-meters">
             <label htmlFor="_total-square-meters"><h3>Total square meters of all meeting rooms:</h3></label>
@@ -152,14 +152,15 @@ class Outputs extends Component {
               value={final_savings_daily}
             />
           </div>
-        </div>}
+        </div>} */}
         <div id="FINAL_SAVINGS_MONTHLY">
-          <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings in CZK MONTHLY:</h3></label>
+          <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings in € MONTHLY:</h3></label>
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
-            value={final_savings_monthly}
+            value={Math.ceil(final_savings_monthly / 28)}
           />
+          <i className="icon-after-savings ion-ios-arrow-down"></i>
         </div>
       </div>
     )

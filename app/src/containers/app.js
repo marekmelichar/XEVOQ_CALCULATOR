@@ -24,19 +24,20 @@ class App extends Component {
     return (
       <div>
         <div id="calculator-testimonials" className="row">
-          <div className="column size_50">
+          <div className="column size_100">
+            <h2 className="sub-heading">Dixons Carphone</h2>
             <div className="logo">
               <img src={window.location.hostname !== 'localhost' ? `${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg` : "../../../images/Dixons_Carphone.svg"} alt="Dixons_Carphone Logo" />
             </div>
-          </div>
-          <div className="column size_50">
-            <h2>Success story thanks to XEVOQ</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+            <div className="testimonial-body">
+              <h2>Success story thanks to XEVOQ</h2>
+              <p>In Dixons, most of the rooms are booked all the time since morning. However, not all people actually use the rooms they booked. Using Xevoq over a few months has averaged more than an hour of cancelled meetings for each room each day. 15 hours of meeting room time saved each has effectively given them two more meeting rooms.</p>
+            </div>
           </div>
         </div>
+
         <div id="calculator-graph" className="row">
-          <div className="column size_50"></div>
-          <div className="column size_50">
+          <div className="column size_100">
             <LineChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
              <XAxis dataKey="name"/>
@@ -49,14 +50,19 @@ class App extends Component {
             </LineChart>
           </div>
         </div>
-        <div id="calculator-app" className="row">
-          <div className="column size_50">
-            <Inputs />
+        <article id="calculator-app" className="row">
+          <div className="row">
+            <div className="column size_100">
+              <h1>CALCULATE YOUR SAVINGS</h1>
+              <Inputs />
+            </div>
           </div>
-          <div className="column size_50">
-            <Outputs />
+          <div className="row">
+            <div className="column size_100">
+              <Outputs />
+            </div>
           </div>
-        </div>
+        </article>
         {/* <div className="row">
           <div className="column size_100">
             <Email />
