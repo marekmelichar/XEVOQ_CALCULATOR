@@ -109,52 +109,11 @@ class Outputs extends Component {
 
     return (
       <div id="how-we-got-those-numbers">
-        {/* <button onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>Configure other parameters</button>
-        {this.state.open_other_inputs && <div id="output-fields">
-          <div id="total-square-meters">
-            <label htmlFor="_total-square-meters"><h3>Total square meters of all meeting rooms:</h3></label>
-            <input
-              id="_total-square-meters"
-              type="number"
-              value="0"
-              onChange={event => this.C4(event)}
-              value={this.state.C4}
-              onFocus={event => this.handleFocus(event)}
-            />
-          </div>
-          <div id="price-of-rent-1sqm">
-            <label htmlFor="_price-of-rent-1sqm"><h3>Price of rent / 1 square meter:</h3></label>
-            <input
-              id="_price-of-rent-1sqm"
-              type="number"
-              value="0"
-              onChange={event => this.C6(event)}
-              value={this.state.C6}
-              onFocus={event => this.handleFocus(event)}
-            />
-          </div>
-          <div id="average-salary">
-            <label htmlFor="_average-salary"><h3>Average salary per hour of all attendees of meetings:</h3></label>
-            <input
-              id="_average-salary"
-              type="number"
-              value="0"
-              onChange={event => this.C7(event)}
-              value={this.state.C7}
-              onFocus={event => this.handleFocus(event)}
-            />
-          </div>
-          <div id="FINAL_SAVINGS_DAILY">
-            <label htmlFor="_FINAL_SAVINGS_DAILY"><h3>Final Savings in CZK DAILY:</h3></label>
-            <input
-              id="_FINAL_SAVINGS_DAILY"
-              type="text"
-              value={final_savings_daily}
-            />
-          </div>
-        </div>} */}
+        {/* <button onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>Configure other parameters</button>*/}
+
         <div id="FINAL_SAVINGS_MONTHLY">
           <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings in € MONTHLY:</h3></label>
+          <p onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p>
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
@@ -162,6 +121,63 @@ class Outputs extends Component {
           />
           <i className="icon-after-savings ion-ios-arrow-down"></i>
         </div>
+
+        {this.state.open_other_inputs && <div id="output-fields" className="row">
+          <div className="column size_33">
+            <div id="total-square-meters">
+              <input
+                id="_total-square-meters"
+                type="number"
+                value="0"
+                onChange={event => this.C4(event)}
+                value={this.state.C4}
+                onFocus={event => this.handleFocus(event)}
+              />
+              <label htmlFor="_total-square-meters"><h3>Total square meters of all meeting rooms:</h3></label>
+            </div>
+          </div>
+
+          <div className="column size_33">
+            <div id="price-of-rent-1sqm">
+              <input
+                id="_price-of-rent-1sqm"
+                type="number"
+                value="0"
+                onChange={event => this.C6(event)}
+                value={this.state.C6}
+                onFocus={event => this.handleFocus(event)}
+              />
+              <label htmlFor="_price-of-rent-1sqm"><h3>Price of rent / 1 square meter:</h3></label>
+            </div>
+          </div>
+
+          <div className="column size_33">
+            <div id="average-salary">
+              <input
+                id="_average-salary"
+                type="number"
+                value="0"
+                onChange={event => this.C7(event)}
+                value={this.state.C7}
+                onFocus={event => this.handleFocus(event)}
+              />
+              <label htmlFor="_average-salary"><h3>Average salary per hour of all attendees of meetings:</h3></label>
+            </div>
+          </div>
+
+          {/*
+          <div id="FINAL_SAVINGS_DAILY">
+            <label htmlFor="_FINAL_SAVINGS_DAILY"><h3>Final Savings in CZK DAILY:</h3></label>
+            <input
+              id="_FINAL_SAVINGS_DAILY"
+              type="text"
+              value={final_savings_daily}
+            />
+          </div> */}
+          <div className="hide-button" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>
+            Hide
+          </div>
+        </div>}
       </div>
     )
   }
