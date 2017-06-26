@@ -113,7 +113,7 @@ class Outputs extends Component {
 
         <div id="FINAL_SAVINGS_MONTHLY">
           <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings in € MONTHLY:</h3></label>
-          <p onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p>
+          <p className="how-did-we-calculate" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p>
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"

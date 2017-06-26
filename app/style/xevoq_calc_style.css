@@ -155,6 +155,7 @@ input#_amount-of-meetings-daily {
   font-weight: bold;
   height: 120px;
   text-align: center;
+  cursor: none;
 }
 
 #FINAL_SAVINGS_MONTHLY .icon-after-savings {
@@ -169,10 +170,12 @@ input#_amount-of-meetings-daily {
   display: block;
 }
 
-#FINAL_SAVINGS_MONTHLY p {
+#FINAL_SAVINGS_MONTHLY .how-did-we-calculate {
   margin-top: 20px;
   text-decoration: underline;
   cursor: pointer;
+  font-size: 18px;
+  color: #fff;
 }
 
 #calculator .hide-button {
