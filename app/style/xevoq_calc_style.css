@@ -213,3 +213,29 @@ input#_average-salary {
   width: 80%;
   margin: 0 auto;
 }
+
+
+
+
+
+
+
+
+@media screen and (min-width: 767px) and (max-width: 768px) {
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .recharts-surface,
+  .recharts-default-legend {
+    max-width: 390px;
+    width: 100%;
+  }
+
+  #calculator-app h1 {
+    font-size: 40px;
+  }
+
+}
