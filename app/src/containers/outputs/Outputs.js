@@ -113,13 +113,13 @@ class Outputs extends Component {
 
         <div id="FINAL_SAVINGS_MONTHLY">
           <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings in € MONTHLY:</h3></label>
-          <p className="how-did-we-calculate" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p>
+          {/* <p className="how-did-we-calculate" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p> */}
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
             value={Math.ceil(final_savings_monthly / 28)}
           />
-          <i className="icon-after-savings ion-ios-arrow-down"></i>
+          {/* <i className="icon-after-savings ion-ios-arrow-down"></i> */}
         </div>
 
         {this.state.open_other_inputs && <div id="output-fields" className="row">
