@@ -27,7 +27,7 @@ class App extends Component {
           <div className="column size_100">
             <h2 className="sub-heading">Dixons Carphone</h2>
             <div className="logo">
-              <img src={window.location.hostname !== 'localhost' ? `${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg` : "../../../images/Dixons_Carphone.svg"} alt="Dixons_Carphone Logo" />
+              <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg" alt="Dixons_Carphone Logo" />
             </div>
             <div className="testimonial-body">
               <h2>Success story thanks to XEVOQ</h2>
@@ -38,7 +38,7 @@ class App extends Component {
 
         <div id="calculator-graph" className="row">
           <div className="column size_100">
-            <img src={window.location.hostname !== 'localhost' ? `${window.location.href}/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/xvq_graf_dixons.jpg` : "../../../images/xvq_graf_dixons.jpg"} alt="Dixons_Carphone Graph" />
+            <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/xvq_graf_dixons.jpg" alt="Dixons_Carphone Graph" />
 
             {/* <LineChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
