@@ -16,9 +16,9 @@ class Inputs extends Component {
     super(props)
 
     this.state = {
-      C3: 15,
-      C5: 6,
-      C8: 8
+      C3: 15
+      // C5: 6,
+      // C8: 8
     }
   }
 
@@ -31,23 +31,23 @@ class Inputs extends Component {
     this.setState({ C3: value })
     this.props.C3(value)
   }
-
-  C5(event) {
-    let value = parseFloat(event.target.value)
-    this.setState({ C5: value })
-    this.props.C5(value)
-  }
-
-  C8(event) {
-    let value = parseFloat(event.target.value)
-    this.setState({ C8: value })
-    this.props.C8(value)
-  }
+  //
+  // C5(event) {
+  //   let value = parseFloat(event.target.value)
+  //   this.setState({ C5: value })
+  //   this.props.C5(value)
+  // }
+  //
+  // C8(event) {
+  //   let value = parseFloat(event.target.value)
+  //   this.setState({ C8: value })
+  //   this.props.C8(value)
+  // }
 
   render() {
     return (
       <div className="row">
-        <div id="number-of-rooms" className="column size_33">
+        <div id="number-of-rooms" className="column size_100">
           <input
             id="_number-of-rooms"
             type="number"
@@ -58,7 +58,7 @@ class Inputs extends Component {
           />
           <label htmlFor="_number-of-rooms"><h3>Number of rooms</h3></label>
         </div>
-        <div id="average-occupancy-of-rooms" className="column size_33">
+        {/* <div id="average-occupancy-of-rooms" className="column size_33">
           <input
             id="_average-occupancy-of-rooms"
             type="number"
@@ -79,7 +79,7 @@ class Inputs extends Component {
             onFocus={event => this.handleFocus(event)}
           />
           <label htmlFor="_amount-of-meetings-daily"><h3>Amount of meetings per day</h3></label>
-        </div>
+        </div> */}
 	    </div>
     );
   }
