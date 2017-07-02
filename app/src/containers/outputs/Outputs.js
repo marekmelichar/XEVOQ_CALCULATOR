@@ -107,7 +107,11 @@ class Outputs extends Component {
     //     final_savings_monthly = d
     //   }
 
-    final_savings_monthly = logic.C3 ? logic.C3 * 500 * 14 * 0.25 : 0
+    let finalSUM = logic.C3 * 500 * 14 * 0.25
+
+    final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 27) : 0
+
+    console.log('final_savings_monthly', final_savings_monthly);
 
     return (
       <div id="how-we-got-those-numbers">
@@ -119,7 +123,8 @@ class Outputs extends Component {
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
-            value={`€ ${Math.ceil(final_savings_monthly / 27)}`}
+            // value={`€ ${Math.ceil(final_savings_monthly)}`}
+            value={`€ ${final_savings_monthly.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
           />
           {/* <i className="icon-after-savings ion-ios-arrow-down"></i> */}
         </div>
