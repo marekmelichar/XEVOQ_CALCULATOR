@@ -23,35 +23,48 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div id="calculator-testimonials" className="row">
-          <div className="column size_100">
-            <h2 className="sub-heading">Dixons Carphone</h2>
-            <div className="logo">
-              <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg" alt="Dixons_Carphone Logo" />
-            </div>
-            <div className="testimonial-body">
-              <h2>Success story thanks to XEVOQ</h2>
-              <p>In Dixons, most of the rooms are booked all the time since morning. However, not all people actually use the rooms they booked. Using Xevoq over a few months has averaged more than 2 hours of cancelled meetings for each room each day. 30 hours of meeting room time saved each has effectively given them more than 3 free meeting rooms.</p>
+        <div id="calculator-testimonials">
+
+
+          <div className="row">
+            <div className="column size_100 slide-content">
+              <h2 className="sub-heading">Dixons Carphone</h2>
+              <div className="logo">
+                <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg" alt="Dixons_Carphone Logo" />
+              </div>
+              <div className="testimonial-body">
+                <h2>Success story thanks to XEVOQ</h2>
+                <p>Rooms at Dixons are mostly booked fully from morning on. However, not all people actually use the rooms. Over a several-month period, Xevoq has on average provided more than 2 hours of cancelled meetings for each room each day. 30 hours of meeting room time saved per room effectively adds up to more than 3 free meeting rooms.</p>
+              </div>
+              <div id="calculator-graph" className="row">
+                <div className="column size_100">
+                  <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/xvq_graf_dixons.jpg" alt="Dixons_Carphone Graph" />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div id="calculator-graph" className="row">
-          <div className="column size_100">
-            <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/xvq_graf_dixons.jpg" alt="Dixons_Carphone Graph" />
-
-            {/* <LineChart width={600} height={300} data={data}
-            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-             <XAxis dataKey="name"/>
-             <YAxis/>
-             <CartesianGrid strokeDasharray="3 3"/>
-             <Tooltip/>
-             <Legend />
-             <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
-             <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-            </LineChart> */}
+          <div className="row">
+            <div className="column size_100 slide-content">
+              <h2 className="sub-heading">Ixperta</h2>
+              <div className="logo">
+                <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/logo_ixperta.jpg" alt="Ixperta Logo" />
+              </div>
+              <div className="testimonial-body">
+                <h2>Success story thanks to XEVOQ</h2>
+                <p>In Ixperta, we always practice what we preach. That is why both our Brno and Prague offices have Xevoq installed on a total of 14 meeting rooms. And you can bet that our developers do not give us anything for free. We have to keep the system top notch.​</p>
+              </div>
+              <div id="calculator-graph" className="row">
+                <div className="column size_100">
+                  <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/xvq_graf_ixperta.jpg" alt="Ixperta Graph" />
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
+
+
         <article id="calculator-app" className="row">
           <div className="row">
             <div className="column size_100">

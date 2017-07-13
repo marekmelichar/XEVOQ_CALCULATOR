@@ -111,7 +111,7 @@ class Outputs extends Component {
 
     final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 27) : 0
 
-    console.log('final_savings_monthly', final_savings_monthly);
+    // console.log('final_savings_monthly', final_savings_monthly);
 
     return (
       <div id="how-we-got-those-numbers">

@@ -217,6 +217,45 @@ input#_average-salary {
   margin: 0 auto;
 }
 
+#demo {
+  width: 100%;
+  float: left;
+  margin: 4em 0 0 0;
+}
+
+#calculator {
+  width: 100%;
+}
+
+#calculator-graph .column {
+  text-align: center;
+}
+
+#calculator-graph img {
+    max-width: 600px;
+    width: 100%;
+}
+
+#calculator .slick-prev {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid green;
+  color: green;
+  text-transform: uppercase;
+  z-index: 999;
+}
+
+#calculator .slick-next {
+  position: absolute;
+    right: 0;
+    top: 150px;
+}
+
 
 
 
@@ -241,6 +280,15 @@ input#_average-salary {
     font-size: 40px;
   }
 
+  #calculator .slick-prev, #calculator .slick-next {
+    top: 6px;
+  }
+
+#calculator .sub-heading {
+    text-align: center;
+    margin-top: 100px;
+}
+
 }
 
 @media screen and (max-width: 321px) {
@@ -255,5 +303,31 @@ input#_average-salary {
     height: 50px;
     margin-top: 50px;
 }
+
+  #calculator .slick-prev, #calculator .slick-next {
+    top: 6px;
+  }
+
+#calculator .sub-heading {
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
