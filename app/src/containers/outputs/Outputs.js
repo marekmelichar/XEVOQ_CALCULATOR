@@ -6,11 +6,14 @@ import * as actions from '../../actions';
 
 class Outputs extends Component {
 
-  // componentDidMount() {
+  componentDidMount() {
   //   this.props.C4(this.state.C4)
   //   this.props.C6(this.state.C6)
   //   this.props.C7(this.state.C7)
-  // }
+
+    this.props.avg_employee_monthly_rate(this.state.avg_employee_monthly_rate)
+    this.props.avg_room_sqm(this.state.avg_room_sqm)
+  }
 
   constructor(props) {
     super(props)
@@ -21,7 +24,9 @@ class Outputs extends Component {
       // C7: 650,
       // final_savings_daily: 0,
       final_savings_monthly: 0,
-      open_other_inputs: false
+      open_other_inputs: false,
+      avg_employee_monthly_rate: 500,
+      avg_room_sqm: 14
     }
   }
 
@@ -46,6 +51,29 @@ class Outputs extends Component {
   //   this.setState({ C7: value })
   //   this.props.C7(value)
   // }
+
+
+  avg_employee_monthly_rate(event) {
+    let value = parseFloat(event.target.value)
+    if (value) {
+      this.setState({ avg_employee_monthly_rate: value })
+      this.props.avg_employee_monthly_rate(value)
+    } else {
+      this.setState({ avg_employee_monthly_rate: '' })
+      this.props.avg_employee_monthly_rate(0)
+    }
+  }
+
+  avg_room_sqm(event) {
+    let value = parseFloat(event.target.value)
+    if (value) {
+      this.setState({ avg_room_sqm: value })
+      this.props.avg_room_sqm(value)
+    } else {
+      this.setState({ avg_room_sqm: '' })
+      this.props.avg_room_sqm(0)
+    }
+  }
 
   renderOutput() {
 
@@ -107,7 +135,7 @@ class Outputs extends Component {
     //     final_savings_monthly = d
     //   }
 
-    let finalSUM = logic.C3 * 500 * 14 * 0.25
+    let finalSUM = logic.C3 * logic.avg_employee_monthly_rate * logic.avg_room_sqm * 0.25
 
     final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 27) : 0
 
@@ -119,7 +147,7 @@ class Outputs extends Component {
 
         <div id="FINAL_SAVINGS_MONTHLY">
           <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings MONTHLY:</h3></label>
-          {/* <p className="how-did-we-calculate" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p> */}
+          <p className="how-did-we-calculate" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p>
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
@@ -131,6 +159,44 @@ class Outputs extends Component {
 
         {this.state.open_other_inputs &&
           <div id="output-fields" className="row">
+
+            <div className="column size_50">
+              <div id="avg_employee_monthly_rate">
+                <input
+                  id="_avg_employee_monthly_rate"
+                  type="number"
+                  onChange={event => this.avg_employee_monthly_rate(event)}
+                  value={this.state.avg_employee_monthly_rate}
+                  onFocus={event => this.handleFocus(event)}
+                />
+                <label htmlFor="_avg_employee_monthly_rate"><h3>Average salary of meeting attendees:</h3></label>
+              </div>
+            </div>
+
+            <div className="column size_50">
+              <div id="avg_room_sqm">
+                <input
+                  id="_avg_room_sqm"
+                  type="number"
+                  onChange={event => this.avg_room_sqm(event)}
+                  value={this.state.avg_room_sqm}
+                  onFocus={event => this.handleFocus(event)}
+                />
+                <label htmlFor="_avg_room_sqm"><h3>Average room square meters:</h3></label>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
             {/* <div className="column size_33">
               <div id="total-square-meters">
                 <input

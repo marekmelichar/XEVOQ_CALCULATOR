@@ -16,6 +16,11 @@ export const BETTER_ORGANIZED_MEETINGS = 'BETTER_ORGANIZED_MEETINGS';
 export const INCREASED_CAPACITY = 'INCREASED_CAPACITY';
 export const SAVINGS = 'SAVINGS';
 
+// NEW FIELDS
+export const AVG_EMPLOYEE_MONTHLY_RATE = 'AVG_EMPLOYEE_MONTHLY_RATE';
+export const AVG_ROOM_SQM = 'AVG_ROOM_SQM';
+
+
 export const C3 = (number) => {
   return {
     type: NUMBER_OF_ROOMS,
@@ -57,6 +62,21 @@ export const C7 = (number) => {
     number
   };
 };
+
+export const avg_employee_monthly_rate = (number) => {
+  return {
+    type: AVG_EMPLOYEE_MONTHLY_RATE,
+    number
+  };
+};
+
+export const avg_room_sqm = (number) => {
+  return {
+    type: AVG_ROOM_SQM,
+    number
+  };
+};
+
 //
 // export const returnOfInvestment = (number) => {
 //   return {

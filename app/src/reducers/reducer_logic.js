@@ -9,7 +9,11 @@ import {
   RETURN_OF_INVESTMENT,
   BETTER_ORGANIZED_MEETINGS,
   INCREASED_CAPACITY,
-  SAVINGS
+  SAVINGS,
+
+  // new fields
+  AVG_EMPLOYEE_MONTHLY_RATE,
+  AVG_ROOM_SQM
 } from '../actions/index';
 
 let INITIAL_STATE = {
@@ -61,6 +65,18 @@ export default function(state = INITIAL_STATE, action) {
       return({
         ...state,
         C7: action.number
+      });
+      break;
+    case AVG_EMPLOYEE_MONTHLY_RATE:
+      return({
+        ...state,
+        avg_employee_monthly_rate: action.number
+      });
+      break;
+    case AVG_ROOM_SQM:
+      return({
+        ...state,
+        avg_room_sqm: action.number
       });
       break;
     default:
