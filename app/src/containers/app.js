@@ -9,6 +9,8 @@ import Inputs from './inputs/Inputs';
 import Outputs from './outputs/Outputs';
 import Email from './email/Email';
 
+import Slider from 'react-slick';
+
 // const data = [
 //       {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
 //       {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
@@ -21,13 +23,15 @@ import Email from './email/Email';
 
 class App extends Component {
   render() {
+    let settings = {
+      arrows: true
+    };
+
     return (
       <div>
         <div id="calculator-testimonials">
-
-
-          <div className="row">
-            <div className="column size_100 slide-content">
+          <Slider {...settings}>
+            <div>
               <h2 className="sub-heading">Dixons Carphone</h2>
               <div className="logo">
                 <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg" alt="Dixons_Carphone Logo" />
@@ -42,10 +46,8 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="row">
-            <div className="column size_100 slide-content">
+            <div>
               <h2 className="sub-heading">Ixperta</h2>
               <div className="logo">
                 <img src="https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/logo_ixperta.jpg" alt="Ixperta Logo" />
@@ -60,8 +62,7 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </div>
-
+          </Slider>
         </div>
 
 
