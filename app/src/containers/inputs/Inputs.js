@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
 
+import language from '../../../language/language_main';
+
 class Inputs extends Component {
 
   componentDidMount() {
@@ -56,7 +58,7 @@ class Inputs extends Component {
             value={this.state.C3}
             onFocus={event => this.handleFocus(event)}
           />
-          <label htmlFor="_number-of-rooms"><h3>Number of rooms</h3></label>
+          <label htmlFor="_number-of-rooms"><h3>{language.calculator.number_of_rooms}</h3></label>
         </div>
         {/* <div id="average-occupancy-of-rooms" className="column size_33">
           <input

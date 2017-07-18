@@ -196,6 +196,14 @@
   height: 100px;
 }
 
+
+#calculator-testimonials h2 {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+
+
 #calculator #how-we-got-those-numbers {
   margin-top: 3.7em;
 }
@@ -297,8 +305,6 @@ input#_avg_room_sqm {
 
 #FINAL_SAVINGS_MONTHLY {
   border: 2px solid rgba(255,255,255,0.5);
-  /*width: 300px;
-  height: 300px;*/
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -347,6 +353,47 @@ input#_avg_room_sqm {
   font-size: 18px;
   color: #fff;
 }
+
+
+#output-fields .field {
+  border: 2px solid rgba(255,255,255,0.5);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  padding: 40px 20px 20px 20px;
+  margin-left: 40px;
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+#output-fields .field h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: #fff;
+}
+
+#output-fields .field h3 {
+  font-size: 16px;
+}
+
+#output-fields .field:after {
+  content: '*';
+  font-size: 50px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 260px;
+}
+
+#output-fields .field:last-child {
+  left: -40px;
+}
+
+#output-fields .field:last-child:after {
+  content: '';
+}
+
 
 #calculator .hide-button {
   margin-top: 20px;

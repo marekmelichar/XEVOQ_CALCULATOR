@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
 
+import language from '../../../language/language_main';
+
 class Outputs extends Component {
 
   componentDidMount() {
@@ -53,27 +55,27 @@ class Outputs extends Component {
   // }
 
 
-  avg_employee_monthly_rate(event) {
-    let value = parseFloat(event.target.value)
-    if (value) {
-      this.setState({ avg_employee_monthly_rate: value })
-      this.props.avg_employee_monthly_rate(value)
-    } else {
-      this.setState({ avg_employee_monthly_rate: '' })
-      this.props.avg_employee_monthly_rate(0)
-    }
-  }
+  // avg_employee_monthly_rate(event) {
+  //   let value = parseFloat(event.target.value)
+  //   if (value) {
+  //     this.setState({ avg_employee_monthly_rate: value })
+  //     this.props.avg_employee_monthly_rate(value)
+  //   } else {
+  //     this.setState({ avg_employee_monthly_rate: '' })
+  //     this.props.avg_employee_monthly_rate(0)
+  //   }
+  // }
 
-  avg_room_sqm(event) {
-    let value = parseFloat(event.target.value)
-    if (value) {
-      this.setState({ avg_room_sqm: value })
-      this.props.avg_room_sqm(value)
-    } else {
-      this.setState({ avg_room_sqm: '' })
-      this.props.avg_room_sqm(0)
-    }
-  }
+  // avg_room_sqm(event) {
+  //   let value = parseFloat(event.target.value)
+  //   if (value) {
+  //     this.setState({ avg_room_sqm: value })
+  //     this.props.avg_room_sqm(value)
+  //   } else {
+  //     this.setState({ avg_room_sqm: '' })
+  //     this.props.avg_room_sqm(0)
+  //   }
+  // }
 
   renderOutput() {
 
@@ -135,7 +137,8 @@ class Outputs extends Component {
     //     final_savings_monthly = d
     //   }
 
-    let finalSUM = logic.C3 * logic.avg_employee_monthly_rate * logic.avg_room_sqm * 0.25
+    // let finalSUM = logic.C3 * logic.avg_employee_monthly_rate * logic.avg_room_sqm * 0.25
+    let finalSUM = 500 * 14 * logic.C3 * 0.25
 
     final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 27) : 0
 
@@ -146,8 +149,8 @@ class Outputs extends Component {
         {/* <button onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>Configure other parameters</button>*/}
 
         <div id="FINAL_SAVINGS_MONTHLY">
-          <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>Final Savings MONTHLY:</h3></label>
-          <p className="how-did-we-calculate" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>How did we calculate this?</p>
+          <label htmlFor="_FINAL_SAVINGS_MONTHLY"><h3>{language.calculator.how_we_got_those_numbers}</h3></label>
+          <p className="how-did-we-calculate" onClick={() => this.setState({ open_other_inputs: !this.state.open_other_inputs })}>{language.calculator.how_did_we_calculate_this}</p>
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
@@ -159,8 +162,37 @@ class Outputs extends Component {
 
         {this.state.open_other_inputs &&
           <div id="output-fields" className="row">
+            <div className="column size_25 field">
+              <h2>500</h2>
+              <h3>{language.calculator.price_per_square_meter}</h3>
+            </div>
 
-            <div className="column size_50">
+            {/* <div className="field-multiply">*</div> */}
+
+            <div className="column size_25 field">
+              <h2>14</h2>
+              <h3>{language.calculator.avg_room_size}</h3>
+            </div>
+
+            {/* <div className="field-multiply">*</div> */}
+
+            <div className="column size_25 field">
+              <h2>{logic.C3}</h2>
+              <h3>{language.calculator.number_of_rooms}</h3>
+            </div>
+
+            {/* <div className="field-multiply">*</div>  */}
+
+            <div className="column size_25 field">
+              <h2>0.25</h2>
+              <h3>{language.calculator.cancellation}</h3>
+            </div>
+
+
+
+
+
+            {/* <div className="column size_50">
               <div id="avg_employee_monthly_rate">
                 <input
                   id="_avg_employee_monthly_rate"
@@ -184,18 +216,7 @@ class Outputs extends Component {
                 />
                 <label htmlFor="_avg_room_sqm"><h3>Average room square meters:</h3></label>
               </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
+            </div> */}
 
             {/* <div className="column size_33">
               <div id="total-square-meters">
