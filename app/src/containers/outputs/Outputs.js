@@ -162,31 +162,39 @@ class Outputs extends Component {
 
         {this.state.open_other_inputs &&
           <div id="output-fields" className="row">
-            <div className="column size_25 field">
-              <h2>500</h2>
-              <h3>{language.calculator.price_per_square_meter}</h3>
-            </div>
+            {/* <div className="column size_25"> */}
+              <div className="field">
+                <h2>19 €</h2>
+                <h3>{language.calculator.price_per_square_meter}</h3>
+              </div>
+            {/* </div> */}
 
             {/* <div className="field-multiply">*</div> */}
 
-            <div className="column size_25 field">
-              <h2>14</h2>
-              <h3>{language.calculator.avg_room_size}</h3>
-            </div>
+            {/* <div className="column size_25"> */}
+              <div className="field">
+                <h2>14 m<sup>2</sup></h2>
+                <h3>{language.calculator.avg_room_size}</h3>
+              </div>
+            {/* </div> */}
 
             {/* <div className="field-multiply">*</div> */}
 
-            <div className="column size_25 field">
-              <h2>{logic.C3}</h2>
-              <h3>{language.calculator.number_of_rooms}</h3>
-            </div>
+            {/* <div className="column size_25"> */}
+              <div className="field">
+                <h2>{logic.C3}</h2>
+                <h3>{language.calculator.number_of_rooms}</h3>
+              </div>
+            {/* </div> */}
 
             {/* <div className="field-multiply">*</div>  */}
 
-            <div className="column size_25 field">
-              <h2>0.25</h2>
-              <h3>{language.calculator.cancellation}</h3>
-            </div>
+            {/* <div className="column size_25"> */}
+              <div className="field">
+                <h2>0.25</h2>
+                <h3>{language.calculator.cancellation}</h3>
+              </div>
+            {/* </div> */}
 
 
 

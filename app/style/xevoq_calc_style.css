@@ -365,6 +365,7 @@ input#_avg_room_sqm {
   text-align: center;
   position: relative;
   color: #fff;
+  float: left;
 }
 
 #output-fields .field h2 {
@@ -386,8 +387,12 @@ input#_avg_room_sqm {
   left: 260px;
 }
 
+#output-fields .field:first-child {
+	margin-left: 0;
+}
+
 #output-fields .field:last-child {
-  left: -40px;
+  /*left: -40px;*/
 }
 
 #output-fields .field:last-child:after {
@@ -404,6 +409,8 @@ input#_avg_room_sqm {
 
 #calculator #output-fields {
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 #calculator #total-square-meters,
@@ -502,6 +509,26 @@ input#_average-salary {
     width: 100%;
   }
 
+
+
+  #calculator #output-fields {
+		display: block;
+	}
+
+	#output-fields .field {
+		margin-left: 60px;
+		margin-bottom: 80px;
+	}
+
+	#output-fields .field:first-child {
+    margin-left: 60px;
+	}
+
+	#output-fields .field:after {
+		top: 90px;
+    left: 270px;
+	}
+
 }
 
 
@@ -531,6 +558,45 @@ input#_average-salary {
     text-align: center;
 }
 
+/*#output-fields .column.field {
+	float: none;
+  display: block;
+  width: 100% !important;
+
+}*/
+
+	#calculator #output-fields {
+		display: block;
+	}
+
+
+
+	#output-fields .field {
+		margin-left: 60px;
+		margin-bottom: 80px;
+	}
+
+	#output-fields .field:first-child {
+    margin-left: 60px;
+	}
+
+	#output-fields .field:after {
+		top: 250px;
+    left: 110px;
+	}
+
+}
+
+@media screen and (max-width: 376px) {
+	#output-fields .field {
+  	margin-left: 40px;
+		margin-bottom: 80px;
+
+	}
+
+	#output-fields .field:first-child {
+   	margin-left: 40px;
+	}
 }
 
 @media screen and (max-width: 321px) {
@@ -557,5 +623,17 @@ input#_average-salary {
   #calculator .slick-prev, #calculator .slick-next {
     top: 850px;
   }
+
+
+
+  #output-fields .field {
+  	margin-left: 10px;
+		margin-bottom: 80px;
+
+	}
+
+	#output-fields .field:first-child {
+   	margin-left: 10px;
+	}
 
 }
