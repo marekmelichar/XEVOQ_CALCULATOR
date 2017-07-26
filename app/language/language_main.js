@@ -25,7 +25,14 @@ if (document.documentElement.lang === "en-US") {
       price_per_square_meter: "Price per square meter",
       avg_room_size: "Average room size",
       number_of_rooms: "Number of rooms",
-      cancellation: "Cancelled meetings / working hours"
+      cancellation: "Cancelled meetings / working hours",
+      avg_number_of_people_per_meeting: "​Average number of people per meeting",
+      avg_hourly_rate: "Average hourly rate",
+      avg_number_of_meetings_per_day_room: "Average number of meetings per day/room",
+      expected_number_of_collisions: "Expected number of collisions",
+      loss_of_time_in_minutes: "Loss of time in minutes (combined)",
+      fields_header_1: "Time saved on meeting rooms freed by autocancel feature",
+      fields_header_2: "Time saved on preventing collisions (Is this room free?)"
     }
   }
 }

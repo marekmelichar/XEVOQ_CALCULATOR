@@ -138,9 +138,15 @@ class Outputs extends Component {
     //   }
 
     // let finalSUM = logic.C3 * logic.avg_employee_monthly_rate * logic.avg_room_sqm * 0.25
-    let finalSUM = 500 * 14 * logic.C3 * 0.25
+    // let finalSUM = 500 * 14 * logic.C3 * 0.25
 
-    final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 27) : 0
+    // final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 26.5) : 0
+
+    let finalSUM = 3.6 * 650 * logic.C3 * 4 * 0.1 * 0.2
+
+    let final_savings_daily_and_room = logic.C3 ? Math.ceil(finalSUM / 26.5) : 0
+    let final_savings_daily = final_savings_daily_and_room * logic.C3
+        final_savings_monthly = final_savings_daily * 20 / 26.5
 
     // console.log('final_savings_monthly', final_savings_monthly);
 
@@ -160,8 +166,10 @@ class Outputs extends Component {
           {/* <i className="icon-after-savings ion-ios-arrow-down"></i> */}
         </div>
 
-        {this.state.open_other_inputs &&
-          <div id="output-fields" className="row">
+        {this.state.open_other_inputs && <div id="output-fields">
+
+          <div className="fields_heading">{language.calculator.fields_header_1}</div>
+          <div className="fields_wrapper">
             {/* <div className="column size_25"> */}
               <div className="field">
                 <h2>19 €</h2>
@@ -195,6 +203,38 @@ class Outputs extends Component {
                 <h3>{language.calculator.cancellation}</h3>
               </div>
             {/* </div> */}
+
+            </div>
+
+            <div className="divider_plus">+</div>
+
+            <div className="fields_heading">{language.calculator.fields_header_2}</div>
+            <div className="fields_wrapper">
+              <div className="field_2">
+                <h2>3.6</h2>
+                <h3>{language.calculator.avg_number_of_people_per_meeting}</h3>
+              </div>
+              <div className="field_2">
+                <h2>650</h2>
+                <h3>{language.calculator.avg_hourly_rate}</h3>
+              </div>
+              <div className="field_2">
+                <h2>{logic.C3}</h2>
+                <h3>{language.calculator.number_of_rooms}</h3>
+              </div>
+              <div className="field_2">
+                <h2>4</h2>
+                <h3>{language.calculator.avg_number_of_meetings_per_day_room}</h3>
+              </div>
+              <div className="field_2">
+                <h2>7 / 100</h2>
+                <h3>{language.calculator.expected_number_of_collisions}</h3>
+              </div>
+              <div className="field_2">
+                <h2>10</h2>
+                <h3>{language.calculator.loss_of_time_in_minutes}</h3>
+              </div>
+            </div>
 
 
 
