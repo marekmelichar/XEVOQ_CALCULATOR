@@ -142,6 +142,7 @@ class Outputs extends Component {
 
     // final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 26.5) : 0
 
+
     let finalSUM = 3.6 * 650 * logic.C3 * 4 * 0.1 * 0.2
 
     let final_savings_daily_and_room = logic.C3 ? Math.ceil(finalSUM / 26.5) : 0
@@ -160,8 +161,10 @@ class Outputs extends Component {
           <input
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
+
             // value={`€ ${Math.ceil(final_savings_monthly)}`}
-            value={`€ ${final_savings_monthly.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
+            // value={`€ ${final_savings_monthly.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
+            value={isNaN(Math.ceil(final_savings_monthly)) ? 0 : `€ ${Math.ceil(final_savings_monthly).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
           />
           {/* <i className="icon-after-savings ion-ios-arrow-down"></i> */}
         </div>
