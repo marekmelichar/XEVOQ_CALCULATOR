@@ -7,14 +7,14 @@ if (document.documentElement.lang === "en-US") {
         heading: "Dixons Carphone CoE, s.r.o.",
         sub_heading: "Success story thanks to XEVOQ",
         logo: "https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/Dixons_Carphone.svg",
-        content: "Rooms at Dixons are mostly booked fully from morning on. However, not all people actually use the rooms. Over a several-month period, Xevoq has on average provided more than 2 hours of cancelled meetings for each room each day. 30 hours of meeting room time saved per room effectively adds up to more than 3 free meeting rooms.",
+        content: "Rooms at Dixons are mostly booked fully from morning on. However, not all people actually use the rooms. Over a several-month period, XEVOQ has on average provided more than 2 hours of cancelled meetings for each room each day. 30 hours of meeting room time saved per room effectively adds up to more than 3 free meeting rooms.",
         graph: "https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/xvq_graf_dixons.jpg"
       },
       ixperta: {
-        heading: "Ixperta",
+        heading: "IXPERTA",
         sub_heading: "Success story thanks to XEVOQ",
         logo: "https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/logo_ixperta.jpg",
-        content: "In Ixperta, we always practice what we preach. That is why both our Brno and Prague offices have Xevoq installed on a total of 14 meeting rooms. And you can bet that our developers do not give us anything for free. We have to keep the system top notch.​",
+        content: "In IXPERTA, we always practice what we preach. That is why both our Brno and Prague offices have XEVOQ installed on a total of 14 meeting rooms. And you can bet that our developers do not give us anything for free. We have to keep the system top notch.​",
         graph: "https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/xvq_graf_ixperta.jpg"
       }
     },
@@ -48,10 +48,10 @@ if (document.documentElement.lang === "de-DE") {
         graph: "https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/DE/xvq_graf_dixons_DE.jpg"
       },
       ixperta: {
-        heading: "Ixperta",
+        heading: "IXPERTA",
         sub_heading: "Erfolge dank XEVOQ",
         logo: "https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/logo_ixperta.jpg",
-        content: "Wir von Ixperta tun stets, was wir sagen: Deshalb haben wir an unseren Standorten in Brünn und Prag in insgesamt 14 Tagungsräumen XEVOQ installiert. Und glauben Sie ja nicht, wir bekämen von unseren eigenen Entwicklern etwas geschenkt. – Nein, wir müssen das System tipptopp in Schuss halten, damit sie zufrieden sind!",
+        content: "Wir von IXPERTA tun stets, was wir sagen: Deshalb haben wir an unseren Standorten in Brünn und Prag in insgesamt 14 Tagungsräumen XEVOQ installiert. Und glauben Sie ja nicht, wir bekämen von unseren eigenen Entwicklern etwas geschenkt. – Nein, wir müssen das System tipptopp in Schuss halten, damit sie zufrieden sind!",
         graph: "https://xevoq.com/wp-content/plugins/XEVOQ_CALCULATOR_REACT/app/images/DE/xvq_graf_ixperta_DE.jpg"
       }
     },

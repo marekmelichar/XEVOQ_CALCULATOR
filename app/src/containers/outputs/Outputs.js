@@ -143,13 +143,17 @@ class Outputs extends Component {
     // final_savings_monthly = logic.C3 ? Math.ceil(finalSUM / 26.5) : 0
 
 
-    let finalSUM = 3.6 * 650 * logic.C3 * 4 * 0.1 * 0.2
+    // 7.8.2017 comment out START
+    // let finalSUM = 3.6 * 650 * logic.C3 * 4 * 0.1 * 0.2
 
-    let final_savings_daily_and_room = logic.C3 ? Math.ceil(finalSUM / 26.5) : 0
-    let final_savings_daily = final_savings_daily_and_room * logic.C3
-        final_savings_monthly = final_savings_daily * 20 / 26.5
+    // let final_savings_daily_and_room = logic.C3 ? Math.ceil(finalSUM / 26.5) : 0
+    // let final_savings_daily = final_savings_daily_and_room * logic.C3
+    //     final_savings_monthly = final_savings_daily * 20 / 26.5
+    // 7.8.2017 comment out  END
 
-    // console.log('final_savings_monthly', final_savings_monthly);
+    let finalSUMTop = 19 * 14 * logic.C3 * 0.25
+    let finalSUMBottom = 3.6 * 25 * logic.C3 * 4 * 0.1 * 0.2
+    let finalSUM = finalSUMTop + finalSUMBottom
 
     return (
       <div id="how-we-got-those-numbers">
@@ -162,9 +166,8 @@ class Outputs extends Component {
             id="_FINAL_SAVINGS_MONTHLY"
             type="text"
 
-            // value={`€ ${Math.ceil(final_savings_monthly)}`}
-            // value={`€ ${final_savings_monthly.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
-            value={isNaN(Math.ceil(final_savings_monthly)) ? 0 : `€ ${Math.ceil(final_savings_monthly).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
+            // value={isNaN(Math.ceil(final_savings_monthly)) ? 0 : `€ ${Math.ceil(final_savings_monthly).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
+            value={isNaN(Math.ceil(finalSUM)) ? 0 : `€ ${Math.ceil(finalSUM).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(".", ",")}`}
           />
           {/* <i className="icon-after-savings ion-ios-arrow-down"></i> */}
         </div>
@@ -218,7 +221,7 @@ class Outputs extends Component {
                 <h3>{language.calculator.avg_number_of_people_per_meeting}</h3>
               </div>
               <div className="field_2">
-                <h2>650</h2>
+                <h2>25 €</h2>
                 <h3>{language.calculator.avg_hourly_rate}</h3>
               </div>
               <div className="field_2">
