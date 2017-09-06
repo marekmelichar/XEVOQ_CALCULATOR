@@ -394,8 +394,10 @@ input#_avg_room_sqm {
   font-size: 50px;
   display: block;
   position: absolute;
-  top: 10px;
-  left: 270px;
+  /*top: 10px;*/
+  /*left: 270px;*/
+  top: 100px;
+  left: 273px;
 }
 
 #output-fields .field:first-child {
@@ -438,8 +440,10 @@ input#_avg_room_sqm {
   font-size: 50px;
   display: block;
   position: absolute;
-  top: 10px;
-  left: 175px;
+  /*top: 10px;*/
+  /*left: 175px;*/
+  top: 50px;
+  left: 178px;
 }
 
 #output-fields .field_2:first-child {

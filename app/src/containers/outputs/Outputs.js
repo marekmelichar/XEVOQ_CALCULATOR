@@ -196,7 +196,7 @@ class Outputs extends Component {
 
             {/* <div className="column size_25"> */}
               <div className="field">
-                <h2>{logic.C3}</h2>
+                <h2>{logic.C3 || 0}</h2>
                 <h3>{language.calculator.number_of_rooms}</h3>
               </div>
             {/* </div> */}
@@ -225,7 +225,7 @@ class Outputs extends Component {
                 <h3>{language.calculator.avg_hourly_rate}</h3>
               </div>
               <div className="field_2">
-                <h2>{logic.C3}</h2>
+                <h2>{logic.C3 || 0}</h2>
                 <h3>{language.calculator.number_of_rooms}</h3>
               </div>
               <div className="field_2">
