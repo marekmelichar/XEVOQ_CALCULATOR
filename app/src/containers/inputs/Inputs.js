@@ -18,7 +18,8 @@ class Inputs extends Component {
     super(props)
 
     this.state = {
-      C3: 15
+      C3: 15,
+      numberOfChars: 1
       // C5: 6,
       // C8: 8
     }
@@ -30,7 +31,13 @@ class Inputs extends Component {
 
   C3(event) {
     let value = parseFloat(event.target.value)
-    this.setState({ C3: value })
+    let valueString = (event.target.value).toString()
+
+    this.setState({
+      numberOfChars: this.state.numberOfChars + 1,
+      C3: valueString.substr(0, 3)
+    })
+
     this.props.C3(value)
   }
   //
@@ -53,7 +60,8 @@ class Inputs extends Component {
           <input
             id="_number-of-rooms"
             type="number"
-            value="0"
+            // value="0"
+            maxLength="5"
             onChange={event => this.C3(event)}
             value={this.state.C3}
             onFocus={event => this.handleFocus(event)}
