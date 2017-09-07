@@ -303,6 +303,10 @@ input#_avg_room_sqm {
   margin: 0 auto;
 }
 
+input#_number-of-rooms {
+  font-size: 40px;
+}
+
 #FINAL_SAVINGS_MONTHLY {
   border: 2px solid rgba(255,255,255,0.5);
   width: 250px;

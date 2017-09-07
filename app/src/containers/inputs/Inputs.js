@@ -101,3 +101,16 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, actions)(Inputs);
+
+
+
+
+
+// kamil.dusek@ixperta.com
+
+//  EN && /order form
+// 1. prechod z hlavni strany a kliknutim na price package - OK
+// 2. prime vyplneni formulare i zkouska na vynechani required pole pro email - OK
+
+// DE a do you have any questions form
+// 1. primo vyplneno - OK
