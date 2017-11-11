@@ -63,13 +63,13 @@ if (document.documentElement.lang === "de-DE") {
       avg_room_size: "Durchschnittliche Zimmergröße",
       number_of_rooms: "Zahl der Räume",
       cancellation: "Abgesagte Treffen / Arbeitszeit",
-      avg_number_of_people_per_meeting: "​Average number of people per meeting",
-      avg_hourly_rate: "Average hourly rate",
-      avg_number_of_meetings_per_day_room: "Average number of meetings per day/room",
-      expected_number_of_collisions: "Expected number of collisions",
-      loss_of_time_in_minutes: "Loss of time in minutes (combined)",
+      avg_number_of_people_per_meeting: "​Durchschnittliche Anzahl von Personen pro Meeting",
+      avg_hourly_rate: "Durchschnittlicher Stundensatz",
+      avg_number_of_meetings_per_day_room: "Durchschnittliche Anzahl von Meetings pro Tag/Raum",
+      expected_number_of_collisions: "Erwartete Anzahl der Kollisionen",
+      loss_of_time_in_minutes: "Zeitverlust in Minuten (kombiniert)",
       fields_header_1: "Time saved on meeting rooms freed by autocancel feature",
-      fields_header_2: "Time saved on preventing collisions (Is this room free?)"
+      fields_header_2: "Zeitersparnis bei Verhinderung von Kollisionen (Ist dieser Raum frei?)"
     }
   }
 }
