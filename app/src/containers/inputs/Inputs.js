@@ -27,6 +27,7 @@ class Inputs extends Component {
 
   handleFocus(event) {
     event.target.select()
+    ga('send', 'event', 'calculator_input_clicked', 'click', 'product-tag', 1);
   }
 
   C3(event) {
